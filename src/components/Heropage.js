@@ -19,17 +19,21 @@ const imageData = [
 
 const HeroPage = () => {
 
-    const [isVisible, setIsVisible] = useState(false);
+    const [visibleCards, setVisibleCards] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => setIsVisible(true), 500);
+        imageData.forEach((_, index) => {
+            setTimeout(() => {
+                setVisibleCards(prev => [...prev, index]);
+            }, index * 800);
+        });
     }, []);
 
     return (
         <div className="hero-container">
           {imageData.map((image, index) => (
-            <div key={index} className={`card ${isVisible ? "slide-in" : ""}`}
-                style={{animationDelay: `${index * 0.5}s`}}
+            <div key={index} className={`card ${visibleCards.includes(index) ? "slide-in" : ""}`}
+                style={{animationDelay: `${index * 3.5}s`}}
             >
                 <img src={image.src} alt={image.label} />
                 <div className="card-label">
