@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import HeroPage from './components/Heropage';
 
 function App() {
