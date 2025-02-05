@@ -33,7 +33,7 @@ const HeroPage = () => {
         <div className="hero-container">
           {imageData.map((image, index) => (
             <div key={index} className={`card ${visibleCards.includes(index) ? "slide-in" : ""}`}
-                style={{animationDelay: `${index * 3.5}s`}}
+                style={{animationDelay: `${index * }s`}}
             >
                 <img src={image.src} alt={image.label} />
                 <div className="card-label">
