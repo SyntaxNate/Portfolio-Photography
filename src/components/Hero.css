@@ -9,6 +9,11 @@
     position: relative;
 }
 
+.header {
+    background: linear-gradient(to right, #574e45, #b08968);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
 .card img {
     width: 100%;
     height: auto;
