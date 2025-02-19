@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Hero.css";
+import "../index.css";
 import Img1 from "../assets/Img1.png";
 import Img2 from "../assets/Img2.png";
 import Img3 from "../assets/Img3.png";
