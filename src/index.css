@@ -1,34 +1,20 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@keyframes shine {
-  0% {
-    background-position: 200% 0;
+@layer utilities {
+  @keyframes swipe {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
   }
-  100% {
-    background-position: -200% 0;
+
+  .hover\:swipe-effect:hover {
+    position: relative;
+    background-image: linear-gradient(to right, rgba(146, 58, 58, 0.6), rgb(199, 37, 37), rgba(27, 167, 22, 0.6));
+    background-size: 200% auto;
+    background-clip: text;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle glow */
+    animation: swipe 0.5s ease-in-out forwards;
   }
-}
-
-.nav-link {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  background-image: linear-gradient(90deg, transparent, rgba(223, 223, 223, 0.7), transparent);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: white;
-  transition: transform 0.3s ease-in-out, background-position 0.7s ease-in-out;
-}
-
-.nav-link:hover {
-  background-position: -200% 0;
-  transform: scale(1.1);
-  color: transparent; /* This ensures only the background gradient is visible */
 }

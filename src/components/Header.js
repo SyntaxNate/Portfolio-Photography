@@ -1,31 +1,25 @@
 import React from "react";
+import ".././index.css";
 import "./Hero.css";
 
-const Header = () => {
-
+export default function Header() {
     return (
-
-        <header className="w-full py-6 fixed top-0 left-0 z-10 bg-gradient-to-r from-[#574e45] to-[#b08968]">
-    <nav className="container mx-auto flex flex-col items-center">
-        <h1 className="text-white text-3xl mb-2 uppercase tracking-wide">
-            Acuated Clarity
-        </h1>
-        <ul className="w-full flex justify-between text-white text-lg tracking-wide">
-            {["Home", "Gallery", "About", "Contact"].map((item) => (
-                <li key={item} className="relative">
-                    <a 
-                        href={`#${item.toLowerCase()}`}
-                        className="nav-link relative inline-block px-4 py-2 transform transition-all duration-300 ease-in-out group hover:scale-110"
-                    >
-                        {item}
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </nav>
-</header>
-        
-    )
-}
-
-export default Header;
+      <header className="w-full bg-gradient-to-r from-[#574e45] to-[#b08968] py-4 px-8 fixed top-0 left-0 z-50 text-white">
+        {/* Title */}
+        <h1 className="text-3xl font-bold text-center">Accuated Clarity</h1>
+  
+        {/* Navigation */}
+        <nav className="w-full flex justify-around mt-4 text-xl font-bold">
+          <button className="relative transition-transform duration-300 hover:scale-110">
+            <span className="hover:swipe-effect">Home</span>
+          </button>
+          <button className="relative transition-transform duration-300 hover:scale-110">
+            <span className="hover:swipe-effect">Gallery</span>
+          </button>
+          <button className="relative transition-transform duration-300 hover:scale-110">
+            <span className="hover:swipe-effect">Contact</span>
+          </button>
+        </nav>
+      </header>
+    );
+  }
